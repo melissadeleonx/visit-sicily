@@ -115,22 +115,15 @@ defaults:
 
 # these are defaults used for the frontmatter for these file types
 
-sidebars:
-- home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
 
 description: "Visit Sicily Now: Your Ultimate Travel Guide, a blog project curated by Melissa De Leon. The website is dedicated to providing the ultimate travel guide for anyone seeking an immersive and unforgettable experience in Sicily"
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-# url:
-# baseurl: 
+url: "http://visitsicilynow.com"
+# baseurl: "/visit-sicily"
 
 
-github: [metadata]
+# github: [metadata]
 
 
-# Copyright 2021 Google LLC

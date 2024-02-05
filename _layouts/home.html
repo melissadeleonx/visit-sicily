@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="assets/js/color-modes.js"></script>
+  <head><script src="{{ site.url }}/assets/js/color-modes.js"></script>
     <script src="{{ site.url }}/assets/js/scroll.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +9,14 @@
     <title>Visit Sicily Now | the Ultimate Guide to Sicily</title>
 
     <link rel="canonical" href="https://visitsicilynow.com/">
-    <link rel="icon" href="img/icons8-lemon-48.png" type="image/x-icon">
+    <link rel="icon" href="{{ site.url }}/img/icons8-lemon-48.png" type="image/x-icon">
 
 
     <link rel="alternate" type="application/rss+xml"  href="{{ site.url }}/feed.xml" title="{{ site.title }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/dist/css/styles.css" rel="stylesheet">
+<link href="{{ site.url }}/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ site.url }}/assets/dist/css/styles.css" rel="stylesheet">
 
 
     <style>
@@ -189,6 +189,7 @@
     </div>
   </header>
 
+  
   <div class="nav-scroller py-1 mb-3 border-bottom">
     <nav class="nav nav-underline justify-content-between">
       <a class="nav-item nav-link text-black active" href="#">Destinations</a>
@@ -262,7 +263,7 @@
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#55595c" />
             <foreignObject width="100%" height="100%">
-              <img src="{{ newest_post.main_photo }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="{{ site.baseurl }}/{{ newest_post.main_photo }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
             </foreignObject>
           </svg>
         </div>
