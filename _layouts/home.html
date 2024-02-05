@@ -283,14 +283,16 @@
       <h2 class="display-5 link-body-emphasis mb-1">{{ newest_post.title }}</h2>
       <p class="blog-post-meta">{{ newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ newest_post.author }}</a></p>
 
-      {{ newest_post.content }}
-
-      <!-- Additional styling for the newest post goes here -->
+  {{ newest_post.content | truncatewords: 600 }}
+          <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Read more
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+          </div>
         </article>
-
     {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
 {% assign second_newest_post = posts_sorted[1] %}
-{% assign post_content = second_newest_post.content | strip_html | truncatewords: 500 %}
+{% assign post_content = second_newest_post.content | strip_html | truncatewords: 400 %}
 
 <article class="blog-post animated-section">
     <h2 class="display-5 link-body-emphasis mb-1">{{ second_newest_post.title }}</h2>
@@ -298,8 +300,11 @@
 
     {{ post_content | markdownify }}
 
-    <!-- You can customize the rest of the HTML structure as needed -->
-</article>
+          <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Read more
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+          </div></article>
 
   {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
 {% assign third_newest_post = posts_sorted[2] %}
@@ -310,6 +315,11 @@
     <p class="blog-post-meta">{{ third_newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ third_newest_post.author }}</a></p>
 
     {{ post_content | markdownify }}
+              <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Read more
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+          </div>
 
     <!-- You can customize the rest of the HTML structure as needed -->
 </article>
@@ -371,22 +381,17 @@
 </div>
 
         <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
-          <ol class="list-unstyled mb-0">
-            <li><a href="#">February 2024</a></li>
-            <li><a href="#">March 2024</a></li>
-            <li><a href="#">April 2024</a></li>
-            <li><a href="#">May 2024</a></li>
-            <li><a href="#">June 2024</a></li>
-            <li><a href="#">July 2024</a></li>
-            <li><a href="#">August 2024</a></li>
-            <li><a href="#">September 2024</a></li>
-            <li><a href="#">October 2024</a></li>
-            <li><a href="#">November 2024</a></li>
-            <li><a href="#">December 2024</a></li>
-            <li><a href="#">January 2025</a></li>
-          </ol>
-        </div>
+  <h4 class="fst-italic">Archives</h4>
+  <ol class="list-unstyled mb-0">
+    {% assign unique_dates = site.posts | map: "date" | uniq %}
+    {% for date in unique_dates %}
+      {% assign year = date | date: "%Y" %}
+      {% assign month = date | date: "%B %Y" %}
+      <li><a href="{{ site.baseurl }}/archive/{{ year | slugify }}">{{ month }}</a></li>
+    {% endfor %}
+  </ol>
+</div>
+
 
         <div class="p-4">
           <h4 class="fst-italic">Elsewhere</h4>
