@@ -121,7 +121,8 @@ description: "Visit Sicily Now: Your Ultimate Travel Guide, a blog project curat
 
 # needed for sitemap.xml file only
 url: "https://visitsicilynow.com"
-# baseurl: "/visit-sicily"
+baseurl: ""
+
 
 
 # github: [metadata]
