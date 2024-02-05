@@ -1,0 +1,6 @@
+#TODOLIST
+* TAG for pages and posts
+* Add categories
+* Add separate layout for blog list and tag list, category list
+* Add an email for subscription
+* Connect to website
