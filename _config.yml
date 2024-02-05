@@ -120,7 +120,7 @@ description: "Visit Sicily Now: Your Ultimate Travel Guide, a blog project curat
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-url: "http://visitsicilynow.com"
+url: "https://visitsicilynow.com"
 # baseurl: "/visit-sicily"
 
 
