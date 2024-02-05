@@ -1,8 +1,9 @@
 ---
 title:  "Welcome to Jekyll!"
 categories: jekyll update
+main_photo: "img/pexels-sergio-scandroglio-14447997.jpg"
 permalink: myupdate.html
-tags: [news]
+tags: [travel_tips]
 ---
 
 

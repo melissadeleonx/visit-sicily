@@ -1,11 +1,10 @@
-
 ---
 layout: post
 title:  "Best Beaches in Palermo"
-main_photo: "/img/pexels-sergio-scandroglio-14447997.jpg"
+main_photo: "img/pexels-sergio-scandroglio-14447997.jpg"
 date: 2023-09-01 06:36:58 +0100
 categories: blog
-tags: [featured]
+tags: [featured, festivals]
 author: by Melissa De Leon
 summary: Let's take a little journey into the fascinating story of Sicily. You know, that stunning island with charm pouring out of every corner? Yeah, that's the one!
 ---
