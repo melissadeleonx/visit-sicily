@@ -6,4 +6,3 @@ layout: home
 title: Visit Sicily Now
 ---
 
-{% include links.html %}
