@@ -1,10 +1,11 @@
 ---
-layout: post
+layout: post_section
 title:  "Elon VS Mark in Sicily?"
 main_photo: "/img/pexels-sergio-scandroglio-14447997.jpg"
 date: 2023-08-12 06:36:58 +0100
 categories: blog
 tags: [featured]
+permalink: elon-vs-mark.html
 author: by Melissa De Leon
 summary: Musk, renowned for his ambitious ventures, took to his platform to unveil the intriguing development - "I spoke to the Italian Prime Minister and the Minister of Culture. They agreed on an epic location." 
 ---

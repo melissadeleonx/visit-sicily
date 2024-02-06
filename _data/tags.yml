@@ -3,14 +3,16 @@
 # In other words, the last line must be the last tag in the allowed-tags list.
 allowed-tags:
   - featured
-  - content_types
-  - navigation
-  - formatting
-  - publishing
-  - single_sourcing
-  - special_layouts
-  - collaboration
   - news
-  - troubleshooting
-  - mobile
+  - taormina
+  - palermo
+  - catania
+  - agrigento
+  - syracuse
+  - trapani
+  - festivals
+  - sicilian_cuisines
+  - culture
+  - history
+  - travel_tips
 

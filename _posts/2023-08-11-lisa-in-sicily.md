@@ -1,11 +1,12 @@
 ---
-layout: post
+layout: post_section
 title: "Lisa of BLACKPINK Takes Sicily by Storm" 
 main_photo: "/img/icons8-lemon-48.png"
 date:   2023-08-11 12:36:58 +0100
-categories: 
+categories: blog
 tags: [news, taormina]
 author: by Melissa De Leon
+permalink: lisa-blackpink-sicily.html
 summary: The picturesque landscapes of Sicily, Italy, recently witnessed the arrival of a global pop sensation. Lisa Manoban, a member of the wildly popular K-Pop group BLACKPINK
 ---
 

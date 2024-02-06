@@ -1,14 +1,15 @@
 ---
-layout: post
-title:  "Best Beaches in Palermo"
+layout: post_section
+title: "Best Beaches in Palermo"
+author: Melissa De Leon
 main_photo: "img/pexels-sergio-scandroglio-14447997.jpg"
 date: 2023-09-01 06:36:58 +0100
 categories: blog
-tags: [featured, festivals]
-author: by Melissa De Leon
-summary: Let's take a little journey into the fascinating story of Sicily. You know, that stunning island with charm pouring out of every corner? Yeah, that's the one!
+tags: [featured, festivals, travel_tips, sicilian_cuisines]
+keywords:
+summary: "Ruby is a programming language you must have on your computer in order to build Jekyll locally. Ruby has various gems."
+permalink: best-beaches-palermo.html
 ---
-
 
 Imagine a journey to a Mediterranean paradise, where sun-soaked shores meet crystal-clear waters. If you're wondering what to do in Sicily, look no further. Beyond the island's rich history lies a world of stunning beaches and captivating coastlines. Born from ancient volcanic eruptions millions of years ago, Sicily emerged as a triangular-shaped gem surrounded by natural wonders and breathtaking landscapes.
 

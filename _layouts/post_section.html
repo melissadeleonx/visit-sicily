@@ -1,0 +1,141 @@
+---
+layout: default
+---
+
+<section class="container">
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark" style="background-image: url('{{ site.url }}/{{ page.main_photo | relative_url }}'); background-size: cover; background-position: center;">
+      <div class="col-md-6 px-0">
+        <div class="overlay-container p-4 rounded" style="background-color: rgba(0, 0, 0, 0.5);">
+        <h1 class="display-4 fst-italic">{{ page.title }}</h1>
+        <p class="lead my-3">{{ page.summary }}</p>
+        <p class="lead mb-0"> {% for tag in page.tags %}
+          <a href="#" class="text-white fw-bold">{{ tag }}</a>
+          {% unless forloop.last %}&nbsp;{% endunless %}
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+  </section>
+
+<main class="container mt-3">
+ 
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        whispers from the lemon groves. . .
+      </h3>
+
+      <article class="post h-entry blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+          <h1 class="display-5 link-body-emphasis mb-1" itemprop="name headline">{{ page.title | escape }}</h1>
+          <p class="post-meta">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {{ page.date | date: date_format }}
+            </time>
+            {%- if page.author -%}
+              • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+            {%- endif -%}</p>
+        </header>
+      
+        <div class="post-content e-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+      
+        {%- if site.disqus.shortname -%}
+          {%- include disqus_comments.html -%}
+        {%- endif -%}
+      
+        <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+      </article>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+      </nav>
+
+    </div>
+
+        <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">{{ site.description }}</p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Recent posts</h4>
+          <ul class="list-unstyled">
+            {% assign sicilian_cuisines_posts = site.posts | where: 'tags', 'sicilian_cuisines' %}
+            {% assign travel_tips_posts = site.posts | where: 'tags', 'travel_tips' %}
+            {% assign festivals_posts = site.posts | where: 'tags', 'festivals' %}
+        
+            {% assign sicilian_cuisines_latest_post = sicilian_cuisines_posts | first %}
+            <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ sicilian_cuisines_latest_post.url }}">
+              <svg viewBox="0 0 100 100" class="svg-container">
+                <image href="{{ sicilian_cuisines_latest_post.main_photo }}" width="100" height="100" />
+              </svg>
+              <div class="col-lg-8">
+                <h6 class="mb-0">{{ sicilian_cuisines_latest_post.title }}</h6>
+                <small class="text-body-secondary">{{ sicilian_cuisines_latest_post.date | date: "%B %d, %Y" }}</small>
+              </div>
+            </a>
+          </li>
+        
+        
+            {% assign travel_tips_latest_post = travel_tips_posts | first %}
+            <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ travel_tips_latest_post.url }}">
+              <svg viewBox="0 0 100 100" class="svg-container">
+                <image href="{{ travel_tips_latest_post.main_photo }}" width="100" height="100" />
+              </svg>
+              <div class="col-lg-8">
+                <h6 class="mb-0">{{ travel_tips_latest_post.title }}</h6>
+                <small class="text-body-secondary">{{ travel_tips_latest_post.date | date: "%B %d, %Y" }}</small>
+              </div>
+            </a>
+          </li>
+        
+            {% assign festivals_latest_post = festivals_posts | first %}
+        <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ festivals_latest_post.url }}">
+              <svg viewBox="0 0 100 100" class="svg-container">
+                <image href="{{ festivals_latest_post.main_photo }}" width="100" height="100" />
+              </svg>
+              <div class="col-lg-8">
+                <h6 class="mb-0">{{ festivals_latest_post.title }}</h6>
+                <small class="text-body-secondary">{{ festivals_latest_post.date | date: "%B %d, %Y" }}</small>
+              </div>
+            </a>
+          </li>
+          </ul>
+        </div>
+        <div class="p-4">
+  <h4 class="fst-italic">Archives</h4>
+  <ol class="list-unstyled mb-0">
+    {% assign unique_dates = site.posts | map: "date" | uniq %}
+    {% for date in unique_dates %}
+      {% assign year = date | date: "%Y" %}
+      {% assign month = date | date: "%B %Y" %}
+      <li><a href="{{ site.baseurl }}/archive/{{ year | slugify }}">{{ month }}</a></li>
+    {% endfor %}
+  </ol>
+</div>
+
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/melissadeleonx" target="_blank">GitHub</a></li>
+            <li><a href="https://twitter.com/VisitSicilyNow" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/melissadeleonx/" target="_blank">Linkedin</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+

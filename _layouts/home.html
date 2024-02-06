@@ -277,53 +277,50 @@
         whispers from the lemon groves. . .
       </h3>
 
-    {% assign newest_post = site.posts | first %}
+      {% assign newest_post = site.posts | first %}
 
-    <article class="blog-post animated-section">
-      <h2 class="display-5 link-body-emphasis mb-1">{{ newest_post.title }}</h2>
-      <p class="blog-post-meta">{{ newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ newest_post.author }}</a></p>
+<article class="blog-post animated-section">
+  <h2 class="display-5 link-body-emphasis mb-1">{{ newest_post.title }}</h2>
+  <p class="blog-post-meta">{{ newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ newest_post.author }}</a></p>
 
   {{ newest_post.content | truncatewords: 600 }}
-          <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
-            Read more
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
-          </div>
-        </article>
-    {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
-{% assign second_newest_post = posts_sorted[1] %}
-{% assign post_content = second_newest_post.content | strip_html | truncatewords: 400 %}
 
-<article class="blog-post animated-section">
-    <h2 class="display-5 link-body-emphasis mb-1">{{ second_newest_post.title }}</h2>
-    <p class="blog-post-meta">{{ second_newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ second_newest_post.author }}</a></p>
-
-    {{ post_content | markdownify }}
-
-          <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
-            Read more
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
-          </div></article>
-
-  {% assign posts_sorted = site.posts | sort: 'date' | reverse %}
-{% assign third_newest_post = posts_sorted[2] %}
-{% assign post_content = third_newest_post.content | strip_html | truncatewords: 100 %}
-
-<article class="blog-post animated-section">
-    <h2 class="display-5 link-body-emphasis mb-1">{{ third_newest_post.title }}</h2>
-    <p class="blog-post-meta">{{ third_newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ third_newest_post.author }}</a></p>
-
-    {{ post_content | markdownify }}
-              <div><a href="{{ featured_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
-            Read more
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
-          </div>
-
-    <!-- You can customize the rest of the HTML structure as needed -->
+  <div><a href="{{ newest_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+    Read more
+    <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+  </a></div>
 </article>
 
+{% assign posts_sorted = site.posts | sort: 'date' | reverse %}
+{% assign second_newest_post = posts_sorted[1] %}
+{% assign post_content_2nd = second_newest_post.content | strip_html | truncatewords: 400 %}
+
+<article class="blog-post animated-section">
+  <h2 class="display-5 link-body-emphasis mb-1">{{ second_newest_post.title }}</h2>
+  <p class="blog-post-meta">{{ second_newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ second_newest_post.author }}</a></p>
+
+  {{ post_content_2nd | markdownify }}
+
+  <div><a href="{{ second_newest_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+    Read more
+    <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+  </a></div>
+</article>
+
+{% assign third_newest_post = posts_sorted[2] %}
+{% assign post_content_3rd = third_newest_post.content | strip_html | truncatewords: 100 %}
+
+<article class="blog-post animated-section">
+  <h2 class="display-5 link-body-emphasis mb-1">{{ third_newest_post.title }}</h2>
+  <p class="blog-post-meta">{{ third_newest_post.date | date: "%B %d, %Y" }} by <a href="#">{{ third_newest_post.author }}</a></p>
+
+  {{ post_content_3rd | markdownify }}
+
+  <div><a href="{{ third_newest_post.url }}" class="icon-link gap-1 icon-link-hover stretched-link">
+    Read more
+    <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+  </a></div>
+</article>
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
         <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
@@ -347,36 +344,43 @@
 
     {% assign sicilian_cuisines_latest_post = sicilian_cuisines_posts | first %}
     <li>
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ sicilian_cuisines_latest_post.url }}">
-        <img src="{{ sicilian_cuisines_latest_post.main_photo }}" alt="{{ sicilian_cuisines_latest_post.title }}" width="100%" height="96">
-        <div class="col-lg-8">
-          <h6 class="mb-0">{{ sicilian_cuisines_latest_post.title }}</h6>
-          <small class="text-body-secondary">{{ sicilian_cuisines_latest_post.date | date: "%B %d, %Y" }}</small>
-        </div>
-      </a>
-    </li>
+    <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ sicilian_cuisines_latest_post.url }}">
+      <svg viewBox="0 0 100 100" class="svg-container">
+        <image href="{{ sicilian_cuisines_latest_post.main_photo }}" width="100" height="100" />
+      </svg>
+      <div class="col-lg-8">
+        <h6 class="mb-0">{{ sicilian_cuisines_latest_post.title }}</h6>
+        <small class="text-body-secondary">{{ sicilian_cuisines_latest_post.date | date: "%B %d, %Y" }}</small>
+      </div>
+    </a>
+  </li>
+
 
     {% assign travel_tips_latest_post = travel_tips_posts | first %}
     <li>
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ travel_tips_latest_post.url }}">
-        <img src="{{ travel_tips_latest_post.main_photo }}" alt="{{ travel_tips_latest_post.title }}" width="100%" height="96">
-        <div class="col-lg-8">
-          <h6 class="mb-0">{{ travel_tips_latest_post.title }}</h6>
-          <small class="text-body-secondary">{{ travel_tips_latest_post.date | date: "%B %d, %Y" }}</small>
-        </div>
-      </a>
-    </li>
+    <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ travel_tips_latest_post.url }}">
+      <svg viewBox="0 0 100 100" class="svg-container">
+        <image href="{{ travel_tips_latest_post.main_photo }}" width="100" height="100" />
+      </svg>
+      <div class="col-lg-8">
+        <h6 class="mb-0">{{ travel_tips_latest_post.title }}</h6>
+        <small class="text-body-secondary">{{ travel_tips_latest_post.date | date: "%B %d, %Y" }}</small>
+      </div>
+    </a>
+  </li>
 
     {% assign festivals_latest_post = festivals_posts | first %}
-    <li>
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ festivals_latest_post.url }}">
-        <img src="{{ festivals_latest_post.main_photo }}" alt="{{ festivals_latest_post.title }}" width="100%" height="96">
-        <div class="col-lg-8">
-          <h6 class="mb-0">{{ festivals_latest_post.title }}</h6>
-          <small class="text-body-secondary">{{ festivals_latest_post.date | date: "%B %d, %Y" }}</small>
-        </div>
-      </a>
-    </li>
+<li>
+    <a class="d-flex flex-column flex-lg-row gap-3 align-items-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ festivals_latest_post.url }}">
+      <svg viewBox="0 0 100 100" class="svg-container">
+        <image href="{{ festivals_latest_post.main_photo }}" width="100" height="100" />
+      </svg>
+      <div class="col-lg-8">
+        <h6 class="mb-0">{{ festivals_latest_post.title }}</h6>
+        <small class="text-body-secondary">{{ festivals_latest_post.date | date: "%B %d, %Y" }}</small>
+      </div>
+    </a>
+  </li>
   </ul>
 </div>
 
