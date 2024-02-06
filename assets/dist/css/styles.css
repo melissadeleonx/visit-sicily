@@ -6,7 +6,8 @@
     transition: background-color 0.3s ease;
   }
   
-.btn-outline-secondary:hover {
+  .btn-outline-secondary:hover,
+  .btn-outline-secondary:active  {
     background-color: #ff8000;
     border-color: #61db10;
     border-width: 2px;

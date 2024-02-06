@@ -54,70 +54,74 @@ layout: default
 
     </div>
 
-    <div class="col-md-4">
+        <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-body-tertiary rounded">
           <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+          <p class="mb-0">{{ site.description }}</p>
         </div>
 
         <div>
-          <h4 class="fst-italic">Recent posts</h4>
-          <ul class="list-unstyled">
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Example blog post title</h6>
-                  <small class="text-body-secondary">January 15, 2023</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">This is another blog post title</h6>
-                  <small class="text-body-secondary">January 14, 2023</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2023</small>
-                </div>
-              </a>
-            </li>
-          </ul>
+  <h4 class="fst-italic">Recent posts</h4>
+  <ul class="list-unstyled">
+    {% assign sicilian_cuisines_posts = site.posts | where: 'tags', 'sicilian_cuisines' %}
+    {% assign travel_tips_posts = site.posts | where: 'tags', 'travel_tips' %}
+    {% assign festivals_posts = site.posts | where: 'tags', 'festivals' %}
+
+    {% assign sicilian_cuisines_latest_post = sicilian_cuisines_posts | first %}
+    <li>
+      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ sicilian_cuisines_latest_post.url }}">
+        <img src="{{ sicilian_cuisines_latest_post.main_photo }}" alt="{{ sicilian_cuisines_latest_post.title }}" width="100%" height="96">
+        <div class="col-lg-8">
+          <h6 class="mb-0">{{ sicilian_cuisines_latest_post.title }}</h6>
+          <small class="text-body-secondary">{{ sicilian_cuisines_latest_post.date | date: "%B %d, %Y" }}</small>
         </div>
+      </a>
+    </li>
+
+    {% assign travel_tips_latest_post = travel_tips_posts | first %}
+    <li>
+      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ travel_tips_latest_post.url }}">
+        <img src="{{ travel_tips_latest_post.main_photo }}" alt="{{ travel_tips_latest_post.title }}" width="100%" height="96">
+        <div class="col-lg-8">
+          <h6 class="mb-0">{{ travel_tips_latest_post.title }}</h6>
+          <small class="text-body-secondary">{{ travel_tips_latest_post.date | date: "%B %d, %Y" }}</small>
+        </div>
+      </a>
+    </li>
+
+    {% assign festivals_latest_post = festivals_posts | first %}
+    <li>
+      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ festivals_latest_post.url }}">
+        <img src="{{ festivals_latest_post.main_photo }}" alt="{{ festivals_latest_post.title }}" width="100%" height="96">
+        <div class="col-lg-8">
+          <h6 class="mb-0">{{ festivals_latest_post.title }}</h6>
+          <small class="text-body-secondary">{{ festivals_latest_post.date | date: "%B %d, %Y" }}</small>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
 
         <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
-          <ol class="list-unstyled mb-0">
-            <li><a href="#">February 2024</a></li>
-            <li><a href="#">March 2024</a></li>
-            <li><a href="#">April 2024</a></li>
-            <li><a href="#">May 2024</a></li>
-            <li><a href="#">June 2024</a></li>
-            <li><a href="#">July 2024</a></li>
-            <li><a href="#">August 2024</a></li>
-            <li><a href="#">September 2024</a></li>
-            <li><a href="#">October 2024</a></li>
-            <li><a href="#">November 2024</a></li>
-            <li><a href="#">December 2024</a></li>
-            <li><a href="#">January 2025</a></li>
-          </ol>
-        </div>
+  <h4 class="fst-italic">Archives</h4>
+  <ol class="list-unstyled mb-0">
+    {% assign unique_dates = site.posts | map: "date" | uniq %}
+    {% for date in unique_dates %}
+      {% assign year = date | date: "%Y" %}
+      {% assign month = date | date: "%B %Y" %}
+      <li><a href="{{ site.baseurl }}/archive/{{ year | slugify }}">{{ month }}</a></li>
+    {% endfor %}
+  </ol>
+</div>
+
 
         <div class="p-4">
           <h4 class="fst-italic">Elsewhere</h4>
           <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://github.com/melissadeleonx" target="_blank">GitHub</a></li>
+            <li><a href="https://twitter.com/VisitSicilyNow" target="_blank">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/melissadeleonx/" target="_blank">Linkedin</a></li>
           </ol>
         </div>
       </div>
