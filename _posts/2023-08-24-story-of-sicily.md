@@ -4,7 +4,7 @@ title: "The Story of Sicily"
 main_photo: "/img/pexels-sergio-scandroglio-14447997.jpg"
 date: 2023-08-24 06:36:58 +0100
 categories: blog
-tags: [featured]
+tags: [festivals]
 author: Melissa De Leon
 permalink: story-of-sicily.html
 summary: Oh, the wonders of Sicily! Imagine basking in the warm embrace of the sun as it dances upon the turquoise waters and golden beaches. Spring, summer, and even the heart of autumn – this island knows how to throw a never-ending party for your senses.!

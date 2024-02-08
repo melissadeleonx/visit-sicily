@@ -1,9 +1,9 @@
 ---
 layout: post_section
 title:  "Sicily History"
-main_photo: "/img/pexels-sergio-scandroglio-14447997.jpg"
+main_photo: "/img/pizza.jpeg"
 date: 2023-08-23 06:36:58 +0100
-tags: [featured, taormina]
+tags: [sicilian_cuisines]
 author: Melissa De Leon
 permalink: sicily-history.html
 summary: Let's take a little journey into the fascinating story of Sicily. You know, that stunning island with charm pouring out of every corner? Yeah, that's the one!
