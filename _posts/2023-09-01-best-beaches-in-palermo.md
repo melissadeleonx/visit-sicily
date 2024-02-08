@@ -2,16 +2,19 @@
 layout: post_section
 title: "Best Beaches in Palermo"
 author: Melissa De Leon
-main_photo: "img/pexels-sergio-scandroglio-14447997.jpg"
+main_photo: "img/cefalu-3749526_1280.jpg"
 date: 2023-09-01 06:36:58 +0100
 categories: blog
-tags: [featured, festivals, travel_tips, sicilian_cuisines]
-keywords:
-summary: "Ruby is a programming language you must have on your computer in order to build Jekyll locally. Ruby has various gems."
+tags: [featured, destinations, travel_tips]
+keywords: best beaches in sicily, beaches in palermo, sicily travel guide, visit sicily
+summary: "Beyond the Sicily's rich history lies a world of stunning beaches and captivating coastlines."
 permalink: best-beaches-palermo.html
 ---
 
+
 Imagine a journey to a Mediterranean paradise, where sun-soaked shores meet crystal-clear waters. If you're wondering what to do in Sicily, look no further. Beyond the island's rich history lies a world of stunning beaches and captivating coastlines. Born from ancient volcanic eruptions millions of years ago, Sicily emerged as a triangular-shaped gem surrounded by natural wonders and breathtaking landscapes.
+
+<img src="img/mondello-beach.jpeg" alt="best beaches in palermo Sicily" class="img-fluid">
 
 Legend has it that even royalty sought refuge on Sicily's shores, including Queen Elizabeth and Prince Philip, enchanted by its beauty. Today, this island welcomes a multitude of prominent figures and celebrities seeking their own slice of heaven. Whether it's delving into culture, embarking on food tours, or immersing yourself in local festivals, Sicily has something for everyone. And if you're an active enthusiast, the island offers hiking, swimming, diving, and windsurfing opportunities. The options to unwind are just as endless, from sunbathing to yoga retreats and unique Sicilian experiences.
 
